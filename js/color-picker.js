@@ -503,7 +503,7 @@ colorPicker.directive('colorPicker', ['$document', '$compile', 'ColorHelper', fu
                 }
             }};
     }]);
-colorPicker.directive('colorpicker-text', [function () {
+colorPicker.directive('colorpickerText', [function () {
         return {
             restrict: 'A',
             scope: {
