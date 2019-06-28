@@ -355,21 +355,21 @@ colorPicker.directive('colorPicker', ['$document', '$compile', 'ColorHelper', fu
                         '   <div class="selected-color-background"></div>' +
                         '   <div class="selected-color" ng-style="{\'background-color\':outputColor}"></div>' +
                         '   <div ng-show="type==2" class="hsla-text">' +
-                        '       <input text type="number" pattern="[0-9]*" min="0" max="360" step="' + scope.hslaSteps.h + '" rg=360 action="setHue(v, rg)" ng-model="hslaText.h" spinner="' + attr.colorPickerShowInputSpinner + '" />' +
-                        '       <input text type="number" pattern="[0-9]*" min="0" max="100" step="' + scope.hslaSteps.s + '" rg=100 action="setSaturation(v, rg)" ng-model="hslaText.s" spinner="' + attr.colorPickerShowInputSpinner + '" />' +
-                        '       <input text type="number" pattern="[0-9]*" min="0" max="100" step="' + scope.hslaSteps.l + '" rg=100 action="setLightness(v, rg)" ng-model="hslaText.l" spinner="' + attr.colorPickerShowInputSpinner + '" />' +
-                        '       <input text type="number" pattern="[0-9]+([\.,][0-9]{1,2})?" min="0" max="1" step="' + scope.hslaSteps.a + '" rg=1 action="setAlpha(v, rg)" ng-model="hslaText.a" spinner="' + attr.colorPickerShowInputSpinner + '" />' +
+                        '       <input colorpicker-text type="number" pattern="[0-9]*" min="0" max="360" step="' + scope.hslaSteps.h + '" rg=360 action="setHue(v, rg)" ng-model="hslaText.h" spinner="' + attr.colorPickerShowInputSpinner + '" />' +
+                        '       <input colorpicker-text type="number" pattern="[0-9]*" min="0" max="100" step="' + scope.hslaSteps.s + '" rg=100 action="setSaturation(v, rg)" ng-model="hslaText.s" spinner="' + attr.colorPickerShowInputSpinner + '" />' +
+                        '       <input colorpicker-text type="number" pattern="[0-9]*" min="0" max="100" step="' + scope.hslaSteps.l + '" rg=100 action="setLightness(v, rg)" ng-model="hslaText.l" spinner="' + attr.colorPickerShowInputSpinner + '" />' +
+                        '       <input colorpicker-text type="number" pattern="[0-9]+([\.,][0-9]{1,2})?" min="0" max="1" step="' + scope.hslaSteps.a + '" rg=1 action="setAlpha(v, rg)" ng-model="hslaText.a" spinner="' + attr.colorPickerShowInputSpinner + '" />' +
                         '       <div>H</div><div>S</div><div>L</div><div>A</div>' +
                         '   </div>' +
                         '   <div ng-show="type==1" class="rgba-text">' +
-                        '       <input text type="number" pattern="[0-9]*" min="0" max="255" step="' + scope.rbgaSteps.r + '" rg=255 action="setR(v, rg)" ng-model="rgbaText.r" spinner="' + attr.colorPickerShowInputSpinner + '" />' +
-                        '       <input text type="number" pattern="[0-9]*" min="0" max="255" step="' + scope.rbgaSteps.g + '" rg=255 action="setG(v, rg)" ng-model="rgbaText.g" spinner="' + attr.colorPickerShowInputSpinner + '" />' +
-                        '       <input text type="number" pattern="[0-9]*" min="0" max="255" step="' + scope.rbgaSteps.b + '" rg=255 action="setB(v, rg)" ng-model="rgbaText.b" spinner="' + attr.colorPickerShowInputSpinner + '" />' +
-                        '       <input text type="number" pattern="[0-9]+([\.,][0-9]{1,2})?" min="0" max="1" step="' + scope.rbgaSteps.a + '" rg=1 action="setAlpha(v, rg)" ng-model="rgbaText.a" spinner="' + attr.colorPickerShowInputSpinner + '" />' +
+                        '       <input colorpicker-text type="number" pattern="[0-9]*" min="0" max="255" step="' + scope.rbgaSteps.r + '" rg=255 action="setR(v, rg)" ng-model="rgbaText.r" spinner="' + attr.colorPickerShowInputSpinner + '" />' +
+                        '       <input colorpicker-text type="number" pattern="[0-9]*" min="0" max="255" step="' + scope.rbgaSteps.g + '" rg=255 action="setG(v, rg)" ng-model="rgbaText.g" spinner="' + attr.colorPickerShowInputSpinner + '" />' +
+                        '       <input colorpicker-text type="number" pattern="[0-9]*" min="0" max="255" step="' + scope.rbgaSteps.b + '" rg=255 action="setB(v, rg)" ng-model="rgbaText.b" spinner="' + attr.colorPickerShowInputSpinner + '" />' +
+                        '       <input colorpicker-text type="number" pattern="[0-9]+([\.,][0-9]{1,2})?" min="0" max="1" step="' + scope.rbgaSteps.a + '" rg=1 action="setAlpha(v, rg)" ng-model="rgbaText.a" spinner="' + attr.colorPickerShowInputSpinner + '" />' +
                         '       <div>R</div><div>G</div><div>B</div><div>A</div>' +
                         '   </div>' +
                         '   <div class="hex-text" ng-show="type==0">' +
-                        '       <input text type="text" action="setColorFromHex(string)" ng-model="hexText"/>' +
+                        '       <input colorpicker-text type="text" action="setColorFromHex(string)" ng-model="hexText"/>' +
                         '       <div>HEX</div>' +
                         '   </div>' +
                         '   <div ng-click="typePolicy()" class="type-policy"></div>' +
@@ -503,7 +503,7 @@ colorPicker.directive('colorPicker', ['$document', '$compile', 'ColorHelper', fu
                 }
             }};
     }]);
-colorPicker.directive('text', [function () {
+colorPicker.directive('colorpicker-text', [function () {
         return {
             restrict: 'A',
             scope: {
